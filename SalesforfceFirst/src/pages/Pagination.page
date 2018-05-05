@@ -1,0 +1,22 @@
+<apex:page controller="Pagination" extensions="PaginationControllerExtension">
+    <apex:form >
+        <apex:pageBlock id="details" title="{!Header}">
+            <c:SampleComponent ></c:SampleComponent>
+            <apex:pageBlockTable value="{!OppList}" var="o">
+                
+                <apex:column value="{!o.name}"/>
+                <apex:column value="{!o.Amount}"/>
+                <apex:column value="{!o.expectedrevenue}"/>
+                <apex:column value="{!o.leadsource}"/>
+                <apex:column value="{!o.description}"/>            
+            </apex:pageBlockTable> 
+            <apex:pageBlockButtons >
+                <apex:commandButton value="FP" rerender="details" action="{!firstPage}" disabled="{!Prev}"/>
+                <apex:commandButton value="PP" rerender="details" action="{!previousPage}" disabled="{!Prev}"/>
+                <apex:commandButton value="NP" rerender="details" action="{!nextPage}" disabled="{!Nxt}"/>
+                <apex:commandButton value="LP" rerender="details" action="{!lastPage}" disabled="{!Nxt}"/>
+            
+            </apex:pageBlockButtons>
+        </apex:pageBlock>    
+    </apex:form>    
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:component >
+    <h1>
+        Component has been sucessfully created.
+    </h1>
+</apex:component>
